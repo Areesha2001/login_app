@@ -60,15 +60,23 @@ class SignUpScreen extends StatelessWidget {
                   child: Text(
                     "Sign Up",
                     style: TextStyle(color: Colors.white),
-                  ))),
+                  ),),),
 
           const SizedBox(
             height: 10,
           ),
-          TextButtonWidget(
-            buttonText: 'Login With Google',
-            onPress: () {},
-          ),
+          Container(
+              padding: const EdgeInsets.only(right: 30, left: 30),
+              decoration: BoxDecoration(
+                  color: Colors.amber, borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                  onPressed: () async {
+                    await authServices.signInWithGoogle();
+                  },
+                  child: Text(
+                    "Log In with Google",
+                    style: TextStyle(color: Colors.white),
+                  ))),
           const SizedBox(
             height: 10,
           ),
